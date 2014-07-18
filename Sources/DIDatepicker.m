@@ -5,7 +5,7 @@
 
 #import "DIDatepicker.h"
 #import "DIDatepickerDateView.h"
-
+#import "NSDate+DIDatepicker.h"
 
 const NSTimeInterval kSecondsInDay = 86400;
 const NSInteger kMondayOffset = 2;
@@ -192,9 +192,9 @@ const CGFloat kDIDatepickerSpaceBetweenItems = 15.;
 
 - (void)selectDate:(NSDate *)date
 {
-    NSAssert([self.dates indexOfObject:date] != NSNotFound, @"Date not found in dates array");
+    NSAssert([self.dates indexOfObject:[date dateWithOutTime]] != NSNotFound, @"Date not found in dates array");
 
-    self.selectedDate = date;
+    self.selectedDate = [date dateWithOutTime];
 }
 
 - (void)selectDateAtIndex:(NSUInteger)index

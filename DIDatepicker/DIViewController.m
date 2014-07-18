@@ -27,7 +27,7 @@
 //    [self.datepicker fillCurrentWeek];
 //    [self.datepicker fillCurrentMonth];
     [self.datepicker fillCurrentYear];
-    [self.datepicker selectDateAtIndex:0];
+    [self.datepicker selectDate:[NSDate date]];
 }
 
 - (void)updateSelectedDate
